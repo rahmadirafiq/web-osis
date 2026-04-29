@@ -1,0 +1,148 @@
+/* ============================================
+   ANIMATIONS.CSS — OSIS VOTING
+   ============================================ */
+
+/* ── FADE IN UP ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── FADE IN ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── SLIDE IN LEFT (sidebar active) ── */
+@keyframes slideInLeft {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* ── SLIDE IN RIGHT (toast) ── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(50px); }
+}
+
+/* ── SHAKE (login error) ── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-8px); }
+  30%       { transform: translateX(8px); }
+  45%       { transform: translateX(-6px); }
+  60%       { transform: translateX(6px); }
+  75%       { transform: translateX(-3px); }
+  90%       { transform: translateX(3px); }
+}
+
+.shake { animation: shake .5s cubic-bezier(.36,.07,.19,.97) both; }
+
+/* ── MODAL IN ── */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(.85) translateY(-20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── POP IN (voting checkmark) ── */
+@keyframes popIn {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* ── WAVE (hero emoji) ── */
+@keyframes wave {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(20deg); }
+  30%  { transform: rotate(-10deg); }
+  45%  { transform: rotate(20deg); }
+  60%  { transform: rotate(-5deg); }
+  75%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ── FLOAT (hero icon) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.float-anim { animation: float 3s ease-in-out infinite; }
+
+/* ── PULSE ── */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.05); opacity: .85; }
+}
+
+.pulse-anim { animation: pulse 2s ease-in-out infinite; }
+
+/* ── CONFETTI ── */
+@keyframes confettiFall0 {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+@keyframes confettiFall1 {
+  0%   { transform: translateY(-20px) rotate(45deg);  opacity: 1; }
+  100% { transform: translateY(100vh) rotate(-270deg);opacity: 0; }
+}
+@keyframes confettiFall2 {
+  0%   { transform: translateY(-20px) rotate(-30deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(300deg); opacity: 0; }
+}
+@keyframes confettiFall3 {
+  0%   { transform: translateY(-20px) scale(1);       opacity: 1; }
+  100% { transform: translateY(100vh) scale(.5);      opacity: 0; }
+}
+
+.confetti-0 { animation: confettiFall0 var(--fall-dur,.8s) linear var(--fall-delay,0s) forwards; }
+.confetti-1 { animation: confettiFall1 var(--fall-dur,.8s) linear var(--fall-delay,0s) forwards; }
+.confetti-2 { animation: confettiFall2 var(--fall-dur,.8s) linear var(--fall-delay,0s) forwards; }
+.confetti-3 { animation: confettiFall3 var(--fall-dur,.8s) linear var(--fall-delay,0s) forwards; }
+
+/* ── FLIP NUMBER (countdown) ── */
+@keyframes flipNumber {
+  from { transform: rotateX(90deg); opacity: 0; }
+  to   { transform: rotateX(0deg);  opacity: 1; }
+}
+
+.flip-anim { animation: flipNumber .35s ease; }
+
+/* ── SCROLL REVEAL (JS-triggered) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SHIMMER (loading skeleton) ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+/* ── SPIN ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin { animation: spin 1s linear infinite; }
